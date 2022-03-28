@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">Enviar</button>
+  <script>
+    // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJod…ifX19.3iCh95M4M29auSkyxjPwur9woHkH-BJ6Freh_2pfSIs token leo
+    // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJod…ifX19.Ok4ulQ5_qc9ZjNivkyx5lfHOV5ct7wiwMY-JMi3woyQ token leo2
+          const body = {
+            "username": "maisdcon",
+            "password": "maisdocon",
+            "email": "lesdsso@gmail.com"
+          }
+      function enviar(){
+        console.log('oi');
+        fetch('https://lucasapiloja.000webhostapp.com/json/api/user',{
+        // fetch('http://loja2.local/json/api/user',{
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            //Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJod…n19fQ.WhF3PF67ynm-MDloTVGYafH9C93avilL4DFGAID0J1I",
+          },
+        body: JSON.stringify(body)
+        }).then(response => {
+        console.log(response);
+        return response.json()
+      }).then(json => console.log(json));
+      
+    }console.log(enviar())
+   
+    document.getElementById('btn').addEventListener('click', enviar);
+  </script>
+
+ 
+</body>
+</html>
